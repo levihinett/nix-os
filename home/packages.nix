@@ -56,7 +56,6 @@
 
     # Discord and dependencies
     libappindicator
-    libXScrnSaver
     discord
 
     # Fonts

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ waybar ];
+  home.packages = with pkgs; [ waybar blueman ];
 
   xdg.configFile."waybar/config".text = ''
     {
@@ -11,11 +11,9 @@
       "margin-left": 16,
       "margin-right": 16,
       "spacing": 4,
-
       "modules-left": ["hyprland/workspaces"],
       "modules-center": ["clock"],
-      "modules-right": ["pulseaudio", "network", "battery"],
-
+      "modules-right": ["bluetooth", "pulseaudio", "network", "battery"],
       "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -25,26 +23,28 @@
         },
         "persistent-workspaces": { "*": 5 }
       },
-
       "clock": {
         "format": "  {:%H:%M   %a %d %b}",
         "tooltip-format": "<tt>{calendar}</tt>"
       },
-
+      "bluetooth": {
+        "format": "  {status}",
+        "format-connected": "  {device_alias}",
+        "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
+        "on-click": "blueman-manager"
+      },
       "pulseaudio": {
         "format": "{icon}  {volume}%",
         "format-muted": "  muted",
         "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol"
       },
-
       "network": {
         "interface": "wlp3s0",
         "format-wifi": "  {essid}",
         "format-disconnected": "  offline",
         "on-click": "nm-connection-editor"
       },
-
       "battery": {
         "format": "{icon}  {capacity}%",
         "format-icons": ["", "", "", "", ""],
@@ -61,11 +61,9 @@
       border-radius: 0;
       min-height: 0;
     }
-
     window#waybar {
       background: transparent;
     }
-
     .modules-left,
     .modules-center,
     .modules-right {
@@ -75,11 +73,9 @@
       padding: 0 12px;
       margin: 4px 0;
     }
-
     #workspaces {
       padding: 0 4px;
     }
-
     #workspaces button {
       color: #6c7086;
       background: transparent;
@@ -87,55 +83,23 @@
       border-radius: 8px;
       transition: all 0.2s ease;
     }
-
     #workspaces button.active {
       color: #cba6f7;
     }
-
     #workspaces button:hover {
       color: #cdd6f4;
       background: rgba(203, 166, 247, 0.1);
     }
-
     #clock {
       color: #cdd6f4;
       padding: 0 8px;
       font-weight: 500;
     }
-
-    #pulseaudio {
-      color: #89b4fa;
+    #bluetooth {
+      color: #89dceb;
       padding: 0 8px;
     }
-
-    #pulseaudio.muted {
-      color: #6c7086;
+    #bluetooth.connected {
+      color: #89dceb;
     }
-
-    #network {
-      color: #a6e3a1;
-      padding: 0 8px;
-    }
-
-    #network.disconnected {
-      color: #f38ba8;
-    }
-
-    #battery {
-      color: #a6e3a1;
-      padding: 0 8px;
-    }
-
-    #battery.warning {
-      color: #fab387;
-    }
-
-    #battery.critical {
-      color: #f38ba8;
-    }
-
-    #battery.charging {
-      color: #a6e3a1;
-    }
-  '';
-}
+    #bluetooth.disconnected {
