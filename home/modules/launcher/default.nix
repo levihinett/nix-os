@@ -41,9 +41,4 @@
         foreground: rgba(255,255,255,0.9);
     }
   '';
-
-  # Hyprland keybind for SUPER+D
-  wayland.windowManager.hyprland.keybinds = [
-    { key = "SUPER+D"; exec = "rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi"; }
-  ];
 }
