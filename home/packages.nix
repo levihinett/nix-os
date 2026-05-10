@@ -2,7 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    kitty # dev stuff
+    # Dev tools
+    kitty
     neovim
     tree-sitter
     git
@@ -21,10 +22,14 @@
     yazi
     floorp-bin
 
+    # Clipboard / desktop
     wl-clipboard
     vscodium
+    obsidian
+    pcloud
 
-    waybar # aesthetic stuff
+    # Hyprland ecosystem
+    waybar
     rofi
     mako
     grim
@@ -32,17 +37,17 @@
     brightnessctl
     playerctl
 
+    # Wallpaper / lockscreen
     awww
-    hyprlock # for lock and idle
+    hyprlock
     hypridle
 
-    # required for mason and lsp plugins with neovim
+    # Neovim / development
     nodejs
-
-    # for development
     direnv
     nix-direnv
-  ];
 
-  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # Fonts
+    (nerd-fonts.jetbrains-mono)
+  ];
 }
