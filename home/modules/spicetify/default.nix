@@ -1,3 +1,4 @@
+# home/modules/spicetify/default.nix
 { pkgs, spicetify-nix, lib, ... }:
 
 let
@@ -5,12 +6,12 @@ let
   spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-  # Install Spicetify package
+  # Install Spicetify package for your system
   home.packages = [
     spicePkgs.spicetify
   ];
 
-  # Import the official Home Manager module from the flake
+  # Import the official Spicetify-Nix Home Manager module
   imports = [
     spicetify-nix.homeManagerModules.default
   ];

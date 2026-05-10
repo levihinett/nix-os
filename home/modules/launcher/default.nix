@@ -3,11 +3,11 @@
 {
   home.packages = with pkgs; [
     rofi-wayland
-    wofi
+    wofi      # optional Wayland-native launcher
     matugen
   ];
 
-  # Rofi theme for glassy, wallpaper-synced launcher
+  # Rofi theme (glassy / blur / wallpaper-synced)
   xdg.configFile."rofi/themes/matugen.rasi".text = ''
     * {
       background: rgba(30,30,30,0.6);
@@ -23,6 +23,7 @@
     }
   '';
 
+  # Rofi configuration
   xdg.configFile."rofi/config.rasi".text = ''
     configuration {
       modi: "drun,run,window";
@@ -40,10 +41,13 @@
     }
   '';
 
-  # Optional: script to launch Rofi + refresh Matugen colors
+  # Launcher script that updates Matugen colors and launches Rofi
   home.file.".local/bin/set-launcher".text = ''
     #!/usr/bin/env bash
+    # Update wallpaper colors
     matugen image ~/Pictures/Wallpapers/current.png
+
+    # Launch Rofi with theme
     rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi
   '';
   home.file.".local/bin/set-launcher".executable = true;
