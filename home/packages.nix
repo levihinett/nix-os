@@ -32,6 +32,7 @@
     playerctl
 
     awww
+    hyprlock # for lock and idle
     hypridle
   ];
 }

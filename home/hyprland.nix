@@ -17,17 +17,19 @@
       exec-once = [
         "waybar"
         "mako"
-        "awww init"
-        "awww img /home/levih/Pictures/wallpapers/wallpaper.jpg"
+        "mkdir -p /home/levih/.cache/awww && awww-daemon"
+        "sleep 1 && awww img -o eDP-1 /home/levih/Pictures/wallpapers/wallpaper.jpg"
       ];
 
       bind = [
         "$mod, RETURN, exec, kitty"
         "$mod, Q, killactive"
+        "$mod, L, exec, hyprlock"
         "$mod, M, exit"
         "$mod, D, exec, rofi -show drun"
         "$mod, E, exec, kitty -e yazi"
         "$mod, F, fullscreen"
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"

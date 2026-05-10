@@ -5,6 +5,7 @@
     ./packages.nix
     ./hyprland.nix
     ./shell.nix
+    ./hypridle.nix
   ];
 
   home.username = "levih";
