@@ -1,12 +1,15 @@
-{ pkgs, inputs, ... }:
+# home/modules/spicetify/default.nix
+{ pkgs, ... }:
 
 {
-  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
+  home.packages = with pkgs; [
+    spicetify
+  ];
 
   programs.spicetify = {
     enable = true;
-    theme = inputs.spicetify-nix.legacyPackages.${pkgs.system}.themes.catppuccin;
+    theme = "catppuccin";
     colorScheme = "mocha";
-    enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [ adblock hidePodcasts shuffle ];
+    enabledExtensions = [ "adblock" "hidePodcasts" "shuffle" ];
   };
 }
