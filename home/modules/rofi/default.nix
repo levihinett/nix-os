@@ -63,9 +63,6 @@
     element-text {
       text-color: @fg;
     }
-    element.selected > element-text {
-      text-color: @accent;
-    }
   '';
 
   wayland.windowManager.hyprland.settings.bind = [

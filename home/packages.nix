@@ -54,6 +54,11 @@
     papirus-icon-theme
     bibata-cursors
 
+    # Discord and dependencies
+    libappindicator
+    libXScrnSaver
+    discord
+
     # Fonts
     (nerd-fonts.jetbrains-mono)
   ];
