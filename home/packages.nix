@@ -38,11 +38,11 @@
 
     # required for mason and lsp plugins with neovim
     nodejs
-    npm
-    lua_5_4
 
     # for development
     direnv
     nix-direnv
   ];
+
+  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 }
