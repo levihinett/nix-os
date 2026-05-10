@@ -44,8 +44,6 @@
 
       input.kb_layout = "gb";
 
-      monitor = ",preferred,auto,1";
-
       "exec-once" = [
         "waybar"
         "mako"
