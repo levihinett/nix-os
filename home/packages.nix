@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    kitty
+    kitty # dev stuff
     neovim
     git
     gh
@@ -23,12 +23,15 @@
     wl-clipboard
     vscodium
 
-    waybar
+    waybar # aesthetic stuff
     rofi
     mako
     grim
     slurp
     brightnessctl
     playerctl
+
+    swww
+    hypridle
   ];
 }
