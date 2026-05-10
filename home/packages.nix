@@ -31,7 +31,6 @@
 
     # Hyprland ecosystem
     waybar
-    rofi
     mako
     grim
     slurp
@@ -47,6 +46,14 @@
     nodejs
     direnv
     nix-direnv
+
+    # Theming
+    matugen
+    wofi
+    spicetify
+    hyprpicker
+    papirus-icon-theme
+    bibata-cursors
 
     # Fonts
     (nerd-fonts.jetbrains-mono)
