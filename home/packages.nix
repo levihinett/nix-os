@@ -31,7 +31,7 @@
     brightnessctl
     playerctl
 
-    swww
+    awww
     hypridle
   ];
 }

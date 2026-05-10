@@ -17,8 +17,8 @@
       exec-once = [
         "waybar"
         "mako"
-        "swww init"
-        "swww img /home/levih/Pictures/wallpapers/wallpaper.jpg"
+        "awww init"
+        "awww img /home/levih/Pictures/wallpapers/wallpaper.jpg"
       ];
 
       bind = [
