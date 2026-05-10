@@ -27,6 +27,7 @@
     vscodium
     obsidian
     pcloud
+    onlyoffice-desktopeditors # like ms suite
 
     # Hyprland ecosystem
     waybar

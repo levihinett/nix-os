@@ -6,6 +6,14 @@
     ./hyprland.nix
     ./shell.nix
     ./hypridle.nix
+    ./modules/hyprland
+    ./modules/waybar
+    ./modules/rofi
+    ./modules/kitty
+    ./modules/gtk
+    ./modules/theme
+    ./modules/launcher
+    ./modules/spicetify
   ];
 
   home.username = "levih";
