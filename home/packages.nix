@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     kitty # dev stuff
     neovim
+    tree-sitter
     git
     gh
     tmux
