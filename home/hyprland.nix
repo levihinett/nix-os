@@ -26,7 +26,7 @@
         "$mod, Q, killactive"
         "$mod, L, exec, hyprlock"
         "$mod, M, exit"
-        "$mod, D, exec, rofi -show drun"
+        "$mod, D, exec, rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi"
         "$mod, E, exec, kitty -e yazi"
         "$mod, F, fullscreen"
         "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
