@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   home.packages = with pkgs; [ rofi wofi ];
 
@@ -19,6 +18,6 @@
   '';
 
   wayland.windowManager.hyprland.settings.bind = [
-    { key = "SUPER+D"; exec = "rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi"; }
+    "$mod, D, exec, rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi"
   ];
 }
