@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    rofi-wayland
+    rofi
     wofi      # optional Wayland-native launcher
     matugen
   ];
