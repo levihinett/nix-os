@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ rofi-wayland wofi ];
+  home.packages = with pkgs; [ rofi wofi ];
 
   xdg.configFile."rofi/themes/matugen.rasi".text = ''
     * {
