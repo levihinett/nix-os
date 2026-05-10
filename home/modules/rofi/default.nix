@@ -18,7 +18,7 @@
     }
   '';
 
-  wayland.windowManager.hyprland.keybinds = [
+  wayland.windowManager.hyprland.settings.bind = [
     { key = "SUPER+D"; exec = "rofi -show drun -theme ~/.config/rofi/themes/matugen.rasi"; }
   ];
 }
