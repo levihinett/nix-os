@@ -1,17 +1,29 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, spicetify-nix, lib, ... }:
+
+let
+  # Reference system-specific packages from the flake input
+  spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
-  home.packages = with pkgs; [
-    inputs.spicetify-nix.packages.${pkgs.system}.spicetify
+  # Install Spicetify package
+  home.packages = [
+    spicePkgs.spicetify
   ];
 
+  # Import the official Home Manager module from the flake
   imports = [
-    inputs.spicetify-nix.homeManagerModules.default
+    spicetify-nix.homeManagerModules.default
   ];
 
+  # Declarative configuration
   programs.spicetify = {
     enable = true;
-    theme = "catppuccin";
+    theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
-    enabledExtensions = [ "adblock" "hidePodcasts" "shuffle" ];
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle
+    ];
   };
 }
