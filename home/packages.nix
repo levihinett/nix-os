@@ -40,5 +40,9 @@
     nodejs
     npm
     lua_5_4
+
+    # for development
+    direnv
+    nix-direnv
   ];
 }
