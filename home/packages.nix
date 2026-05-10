@@ -50,7 +50,6 @@
     # Theming
     matugen
     wofi
-    spicetify
     hyprpicker
     papirus-icon-theme
     bibata-cursors
