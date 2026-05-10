@@ -39,6 +39,6 @@
     # required for mason and lsp plugins with neovim
     nodejs
     npm
-    lua
+    lua_5_4
   ];
 }
