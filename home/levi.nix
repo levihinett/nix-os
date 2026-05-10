@@ -1,4 +1,4 @@
-{ ... }:
+{ spicetify-nix, ... }:
 
 {
   imports = [
@@ -16,10 +16,9 @@
     ./modules/spicetify
   ];
 
-  home.username = "levih";
+  home.username      = "levih";
   home.homeDirectory = "/home/levih";
-
-  home.stateVersion = "25.11";
+  home.stateVersion  = "25.11";
 
   programs.home-manager.enable = true;
 }
